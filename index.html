@@ -1,390 +1,271 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Имя Фамилия — Академическое портфолио</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#F7F7F4;
-    --paper-raised:#FFFFFF;
-    --ink:#1C2333;
-    --accent:#7A2430;
-    --accent-soft:#F3E7E4;
-    --navy:#28324A;
-    --rule:#DAD7CD;
-    --muted:#5B5F6B;
-    --sidebar-w:260px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter',system-ui,sans-serif;
-    font-size:16px;
-    line-height:1.6;
-  }
-  a{color:inherit;}
-  h1,h2,h3{
-    font-family:'Newsreader',Georgia,serif;
-    font-weight:500;
-    margin:0;
-  }
-  .eyebrow{
-    font-size:.72rem;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--muted);
-    font-weight:600;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artem Kuvaev | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #f0f8ff; /* Светло-голубой фон (Alice Blue) */
+            --card-bg: #ffffff; /* Белый фон для карточек */
+            --text-color: #334155; /* Темно-серый текст для хорошего чтения */
+            --text-bright: #0f172a; /* Почти черный для заголовков */
+            --accent-color: #0284c7; /* Насыщенный голубой для акцентов */
+            --accent-green: #059669; /* Изумрудный для кнопки кода */
+            --border-color: #e2e8f0; /* Светлая аккуратная граница */
+        }
 
-  /* ---- layout shell ---- */
-  .shell{
-    display:grid;
-    grid-template-columns:var(--sidebar-w) 1fr;
-    min-height:100vh;
-  }
-  .sidebar{
-    position:sticky;
-    top:0;
-    height:100vh;
-    padding:48px 32px;
-    border-right:1px solid var(--rule);
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-  }
-  .sidebar-top .name{
-    font-size:1.5rem;
-    line-height:1.25;
-    margin-bottom:6px;
-  }
-  .sidebar-top .tagline{
-    color:var(--muted);
-    font-size:.9rem;
-    margin-bottom:36px;
-  }
-  .nav-index{list-style:none;margin:0;padding:0;}
-  .nav-index li{margin-bottom:14px;}
-  .nav-index a{
-    text-decoration:none;
-    color:var(--ink);
-    font-size:.88rem;
-    display:flex;
-    align-items:baseline;
-    gap:10px;
-  }
-  .nav-index a .num{
-    font-family:'Newsreader',serif;
-    font-style:italic;
-    color:var(--accent);
-    font-size:.85rem;
-  }
-  .nav-index a:hover{color:var(--accent);}
-  .sidebar-bottom a.cv-link{
-    display:inline-block;
-    border:1px solid var(--ink);
-    padding:10px 18px;
-    text-decoration:none;
-    font-size:.82rem;
-    letter-spacing:.03em;
-    color:var(--ink);
-    transition:.2s;
-  }
-  .sidebar-bottom a.cv-link:hover{
-    background:var(--ink);
-    color:var(--paper-raised);
-  }
-  .sidebar-bottom .contact{
-    margin-top:16px;
-    font-size:.78rem;
-    color:var(--muted);
-  }
-  .sidebar-bottom .contact a{text-decoration:none;border-bottom:1px solid var(--rule);}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-  main{padding:64px 72px 120px;max-width:920px;}
-  section{margin-bottom:88px;scroll-margin-top:40px;}
-  section .section-head{
-    display:flex;
-    align-items:baseline;
-    gap:16px;
-    margin-bottom:36px;
-    border-bottom:1px solid var(--rule);
-    padding-bottom:16px;
-  }
-  section .section-head h2{font-size:1.7rem;}
-  section .section-head .count{
-    color:var(--muted);
-    font-size:.82rem;
-  }
+        header {
+            max-width: 900px;
+            margin: 40px auto 20px auto;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-  /* ---- about ---- */
-  #about p{max-width:60ch;color:var(--navy);font-size:1.02rem;}
-  .about-lede{
-    font-family:'Newsreader',serif;
-    font-size:1.3rem;
-    font-style:italic;
-    color:var(--ink);
-    max-width:56ch;
-    margin-bottom:20px;
-  }
+        h1 {
+            color: var(--text-bright);
+            margin-bottom: 5px;
+            font-size: 2.5rem;
+        }
 
-  /* ---- achievement rows ---- */
-  .group-label{
-    font-size:.78rem;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    color:var(--accent);
-    font-weight:600;
-    margin:32px 0 16px;
-  }
-  .group-label:first-child{margin-top:0;}
-  .ach{
-    display:grid;
-    grid-template-columns:52px 1fr auto;
-    gap:20px;
-    align-items:center;
-    padding:18px 0;
-    border-bottom:1px solid var(--rule);
-  }
-  .medal{
-    width:44px;height:44px;
-    border-radius:50%;
-    border:2px solid var(--tier-color, var(--muted));
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Newsreader',serif;
-    font-style:italic;
-    font-size:.85rem;
-    color:var(--tier-color, var(--muted));
-    flex-shrink:0;
-  }
-  .ach.tier-intl{--tier-color:var(--accent);}
-  .ach.tier-nat{--tier-color:var(--navy);}
-  .ach.tier-reg{--tier-color:var(--muted);}
-  .ach-title{font-size:1.02rem;font-weight:600;margin-bottom:4px;}
-  .ach-meta{font-size:.85rem;color:var(--muted);}
-  .ach-status{
-    text-align:right;
-    font-size:.78rem;
-    white-space:nowrap;
-  }
-  .status-pill{
-    display:inline-block;
-    padding:4px 10px;
-    border-radius:2px;
-    font-size:.72rem;
-    letter-spacing:.03em;
-    text-transform:uppercase;
-    font-weight:600;
-  }
-  .status-verified{background:var(--accent-soft);color:var(--accent);}
-  .status-progress{background:#EEF0EA;color:var(--navy);}
-  .ach-link{
-    display:block;
-    margin-top:6px;
-    font-size:.78rem;
-    text-decoration:none;
-    border-bottom:1px solid var(--rule);
-    color:var(--muted);
-  }
-  .ach-link:hover{color:var(--accent);border-color:var(--accent);}
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+            font-weight: 600;
+        }
 
-  /* ---- projects ---- */
-  .proj-cols{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:48px;
-  }
-  @media (max-width:860px){.proj-cols{grid-template-columns:1fr;}}
-  .proj-col h3{
-    font-size:1rem;
-    font-family:'Inter',sans-serif;
-    font-weight:600;
-    letter-spacing:.02em;
-    text-transform:uppercase;
-    color:var(--muted);
-    margin-bottom:20px;
-  }
-  .proj-card{
-    background:var(--paper-raised);
-    border:1px solid var(--rule);
-    padding:22px;
-    margin-bottom:18px;
-  }
-  .proj-card h4{
-    font-family:'Newsreader',serif;
-    font-size:1.15rem;
-    font-weight:500;
-    margin-bottom:8px;
-  }
-  .proj-card .stack{
-    font-size:.75rem;
-    color:var(--accent);
-    letter-spacing:.02em;
-    margin-bottom:10px;
-    text-transform:uppercase;
-  }
-  .proj-card p{
-    font-size:.9rem;
-    color:var(--navy);
-    margin:0 0 12px;
-  }
-  .proj-card a.repo-link{
-    font-size:.8rem;
-    text-decoration:none;
-    color:var(--ink);
-    border-bottom:1px solid var(--ink);
-  }
-  .proj-card .private-note{
-    font-size:.78rem;
-    color:var(--muted);
-    font-style:italic;
-  }
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-  footer{
-    padding:32px 72px;
-    border-top:1px solid var(--rule);
-    font-size:.78rem;
-    color:var(--muted);
-  }
+        section {
+            margin-bottom: 40px;
+        }
 
-  @media (max-width:900px){
-    .shell{grid-template-columns:1fr;}
-    .sidebar{position:relative;height:auto;flex-direction:row;flex-wrap:wrap;gap:24px;padding:28px 24px;}
-    .nav-index{display:none;}
-    main{padding:40px 24px 80px;}
-  }
-</style>
+        h2 {
+            color: var(--text-bright);
+            border-bottom: 2px solid #bae6fd; /* Нежно-голубая полоса под заголовком */
+            padding-bottom: 8px;
+            font-size: 1.8rem;
+        }
+
+        .about-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            color: var(--text-bright);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e0f2fe; /* Светло-голубой тег */
+            border: 1px solid #bae6fd;
+            color: #0369a1;
+            padding: 2px 10px;
+            font-size: 0.8rem;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .tag.private {
+            background-color: #fee2e2; /* Нежно-красный для приватного */
+            color: #b91c1c;
+            border-color: #fca5a5;
+        }
+
+        .tag.achievement {
+            background-color: #fef3c7; /* Теплый желтый для олимпиад */
+            color: #b45309;
+            border-color: #fde68a;
+        }
+
+        .links {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #f8fafc;
+            color: #475569;
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: 0.2s;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+            color: var(--text-bright);
+        }
+
+        .btn.primary {
+            background-color: #0284c7; /* Голубая главная кнопка */
+            color: #ffffff;
+            border-color: #0284c7;
+        }
+
+        .btn.primary:hover {
+            background-color: #0369a1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #64748b;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+    </style>
 </head>
 <body>
 
-<div class="shell">
+    <header>
+        <h1>Artem Kuvaev</h1>
+        <p class="subtitle">Software Developer & Tech Enthusiast</p>
+    </header>
 
-  <aside class="sidebar">
-    <div class="sidebar-top">
-      <div class="eyebrow">Академическое портфолио</div>
-      <div class="name">[ЗАПОЛНИТЬ: Имя Фамилия]</div>
-      <div class="tagline">[ЗАПОЛНИТЬ: напр. «Ученик 11 класса, интерес к прикладной математике и информатике»]</div>
-      <ul class="nav-index">
-        <li><a href="#about"><span class="num">i.</span> О себе</a></li>
-        <li><a href="#achievements"><span class="num">ii.</span> Олимпиады</a></li>
-        <li><a href="#projects"><span class="num">iii.</span> Проекты</a></li>
-        <li><a href="#contact"><span class="num">iv.</span> Контакты</a></li>
-      </ul>
-    </div>
-    <div class="sidebar-bottom">
-      <a class="cv-link" href="cv.pdf">Скачать CV (PDF)</a>
-      <div class="contact">
-        <a href="mailto:you@example.com">you@example.com</a>
-      </div>
-    </div>
-  </aside>
+    <main>
+        <!-- ABOUT ME SECTION -->
+        <section>
+            <h2>About Me</h2>
+            <div class="about-box">
+                <p>This is my portfolio, which showcases most of my achievements since 2023. Since all my certificates are in Russian, I have provided a brief English description and a summary for each of them. Thank you for taking the time to check it out. You are very welcome!</p>
+            </div>
+        </section>
 
-  <main>
+        <!-- PROJECTS SECTION -->
+        <section>
+            <h2>Projects</h2>
+            <div class="grid">
+                
+                <!-- Project 1: Finished Public -->
+                <div class="card">
+                    <div>
+                        <span class="tag">Public Repository</span>
+                        <h3>ANIS: Adaptive Neural Interface</h3>
+                        <p>A specialized data processing system built to analyze brain signals and assist individuals diagnosed with Parkinson's disease and Amyotrophic Lateral Sclerosis (ALS).</p>
+                    </div>
+                    <div class="links">
+                        <a href="https://github.com" class="btn primary" target="_blank">View Code</a>
+                        <a href="#" class="btn" target="_blank">Presentation (PDF)</a>
+                    </div>
+                </div>
 
-    <section id="about">
-      <div class="section-head"><h2>О себе</h2></div>
-      <p class="about-lede">[ЗАПОЛНИТЬ: короткая фраза о том, чем вы занимаетесь и что вас двигает — 1–2 предложения курсивом, как эпиграф]</p>
-      <p>[ЗАПОЛНИТЬ: 3–5 предложений — школа/класс, профильные интересы, направления, в которых участвуете в олимпиадах, куда планируете поступать. Пишите от первого лица, нейтрально и по делу — это первое, что читает приёмная комиссия.]</p>
-    </section>
+                <!-- Project 2: Ongoing Private -->
+                <div class="card">
+                    <div>
+                        <span class="tag private">Private Repository</span>
+                        <h3>[Your Application Name]</h3>
+                        <p>An ongoing commercial/product application focused on optimization and scalable architecture. The code repository is private due to commercial confidentiality, but structural details can be provided upon request.</p>
+                    </div>
+                    <div class="links">
+                        <span class="btn" style="cursor: not-allowed; opacity: 0.6; background-color: #e2e8f0;">Code Private</span>
+                    </div>
+                </div>
 
-    <section id="achievements">
-      <div class="section-head">
-        <h2>Олимпиады и достижения</h2>
-        <span class="count">[ЗАПОЛНИТЬ: всего N]</span>
-      </div>
+            </div>
+        </section>
 
-      <div class="group-label">Подтверждённые — сертификат / Госуслуги</div>
+        <!-- ACHIEVEMENTS SECTION -->
+        <section>
+            <h2>Key Achievements & Olympiads</h2>
+            <div class="grid">
 
-      <!-- Пример завершённого достижения с PDF-сертификатом -->
-      <div class="ach tier-intl">
-        <div class="medal">I</div>
-        <div>
-          <div class="ach-title">[ЗАПОЛНИТЬ: Название олимпиады]</div>
-          <div class="ach-meta">Международный уровень · [место, напр. 1 место] · [год]</div>
-          <a class="ach-link" href="certificates/olympiad-1.pdf">Скан сертификата (PDF) →</a>
-        </div>
-        <div class="ach-status"><span class="status-pill status-verified">Сертификат</span></div>
-      </div>
+                <!-- Achievement 1: Entrepreneurship -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">Business & Startups</span>
+                        <h3>All-Russian Olympiad in Entrepreneurship</h3>
+                        <p><strong>Status:</strong> Finalist (2026)</p>
+                        <p>Recognized at the national level for demonstrating advanced competencies in business modeling, product strategy, and project management. Backed by the Ministry of Higher Education and Skolkovo Foundation.</p>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="btn" target="_blank">View Certificate (PDF)</a>
+                    </div>
+                </div>
 
-      <!-- Пример достижения, подтверждённого через Госуслуги -->
-      <div class="ach tier-nat">
-        <div class="medal">II</div>
-        <div>
-          <div class="ach-title">[ЗАПОЛНИТЬ: Название олимпиады]</div>
-          <div class="ach-meta">Всероссийский уровень · [место] · [год]</div>
-          <a class="ach-link" href="#contact">Верифицировано на Госуслугах — подтверждение по запросу →</a>
-        </div>
-        <div class="ach-status"><span class="status-pill status-verified">Госуслуги</span></div>
-      </div>
+                <!-- Achievement 2: Tech Conference -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">Science & Tech</span>
+                        <h3>XX All-Russian Scientific Conference</h3>
+                        <p><strong>Status:</strong> 2nd Degree Diploma Winner (2026)</p>
+                        <p>Awarded in the "Programming" section for the development and defense of neural signal processing algorithms. Included in the official Ministry of Education list of elite academic competitions.</p>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="btn" target="_blank">View Diploma (PDF)</a>
+                    </div>
+                </div>
 
-      <!-- Скопируйте блок выше для каждого следующего подтверждённого достижения -->
-      <div class="ach tier-reg">
-        <div class="medal">III</div>
-        <div>
-          <div class="ach-title">[ЗАПОЛНИТЬ]</div>
-          <div class="ach-meta">Региональный уровень · [место] · [год]</div>
-          <a class="ach-link" href="certificates/olympiad-3.pdf">Скан сертификата (PDF) →</a>
-        </div>
-        <div class="ach-status"><span class="status-pill status-verified">Сертификат</span></div>
-      </div>
+                <!-- Achievement 3: Placeholder for Olympiad 3 -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">Olympiad</span>
+                        <h3>[Name of Olympiad 3]</h3>
+                        <p><strong>Status:</strong> [Winner / Participant] (2024/2025)</p>
+                        <p>Brief 1-2 sentence description in English explaining what you did and why it's important.</p>
+                    </div>
+                    <div class="links">
+                        <a href="#" class="btn" target="_blank">View Certificate (PDF)</a>
+                    </div>
+                </div>
 
-      <div class="group-label">В процессе — результаты ожидаются</div>
-
-      <!-- Пример текущей олимпиады -->
-      <div class="ach tier-intl">
-        <div class="medal">?</div>
-        <div>
-          <div class="ach-title">[ЗАПОЛНИТЬ: Название текущей олимпиады]</div>
-          <div class="ach-meta">Международный уровень · этап: [напр. финал] · результаты: [ожидаемый месяц/год]</div>
-        </div>
-        <div class="ach-status"><span class="status-pill status-progress">В процессе</span></div>
-      </div>
-
-    </section>
-
-    <section id="projects">
-      <div class="section-head">
-        <h2>Проекты</h2>
-        <span class="count">открытые и закрытые</span>
-      </div>
-
-      <div class="proj-cols">
-        <div class="proj-col">
-          <h3>Открытый код</h3>
-
-          <div class="proj-card">
-            <h4>[ЗАПОЛНИТЬ: Название проекта]</h4>
-            <div class="stack">Python · [технологии]</div>
-            <p>[ЗАПОЛНИТЬ: 2–3 предложения — что делает проект, какую задачу решает, ваша роль]</p>
-            <a class="repo-link" href="https://github.com/username/project-name">Репозиторий на GitHub →</a>
-          </div>
-        </div>
-
-        <div class="proj-col">
-          <h3>Закрытые проекты</h3>
-
-          <div class="proj-card">
-            <h4>[ЗАПОЛНИТЬ: Название проекта]</h4>
-            <div class="stack">[технологии]</div>
-            <p>[ЗАПОЛНИТЬ: описание задачи, архитектуры и вашей роли — без ссылки на код. Можно добавить скриншот интерфейса как &lt;img&gt; ниже.]</p>
-            <p class="private-note">Код закрыт. Демонстрация или доступ к репозиторию — по запросу.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-</div>
-
-<footer id="contact">
-  [ЗАПОЛНИТЬ: Имя Фамилия] · портфолио обновлено [месяц, год] · <a href="mailto:you@example.com">you@example.com</a>
-</footer>
-
-</body>
-</html>
+                <!-- Achievement 4: Placeholder for Olympiad 4 -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">Olympiad</span>
+                        <h3>[Name of Olympiad 4]</h3>
+                        <p><strong>Status:</strong> [Winner / Participant]</p>
