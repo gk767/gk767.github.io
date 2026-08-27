@@ -92,6 +92,7 @@
             flex-direction: column;
             justify-content: space-between;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            height: auto; /* Исправлено: адаптивная автоматическая высота */
         }
 
         .card h3 {
@@ -110,6 +111,7 @@
             border-radius: 20px;
             margin-bottom: 10px;
             font-weight: 500;
+            width: fit-content;
         }
 
         .tag.private {
@@ -125,7 +127,7 @@
         }
 
         .links {
-            margin-top: 15px;
+            margin-top: 20px;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
@@ -238,15 +240,11 @@
                         <h3>Island for Mac</h3>
                         <p>A native macOS productivity utility that seamlessly integrates a "Dynamic Island" widget near the camera notch. Features include interactive media controller, background timers, customizable clipboard tools, and notification tracking without dock icons or separate windows.</p>
                         
-                        <!-- ПРОФЕССИОНАЛЬНАЯ ГАЛЕРЕЯ ТРЕХ СКРИНШОТОВ -->
+                        <!-- ГАЛЕРЕЯ СКРИНШОТОВ ПРИЛОЖЕНИЯ -->
                         <div class="img-gallery-wrapper">
-                            <!-- Скриншот 1 (Большое интро сверху) -->
                             <img src="island_intro.png" alt="Island for Mac Intro Animation" class="card-img" style="margin-top: 0;">
-                            
                             <div class="img-gallery-sub">
-                                <!-- Скриншот 2 (Главная страница) -->
                                 <img src="island_main.png" alt="Island for Mac Landing">
-                                <!-- Скриншот 3 (Фичи/Таймер) -->
                                 <img src="island_features.png" alt="Island for Mac UI Features">
                             </div>
                         </div>
