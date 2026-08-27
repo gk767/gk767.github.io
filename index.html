@@ -187,6 +187,82 @@
         .subsection-title:first-of-type {
             margin-top: 20px;
         }
+
+        /* Collapsible sections & subsections */
+        details.collapsible-section > summary,
+        details.collapsible-sub > summary {
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        details.collapsible-section > summary::-webkit-details-marker,
+        details.collapsible-sub > summary::-webkit-details-marker {
+            display: none;
+        }
+        details.collapsible-section > summary::marker,
+        details.collapsible-sub > summary::marker {
+            content: "";
+        }
+        details.collapsible-section > summary h2,
+        details.collapsible-sub > summary .subsection-title {
+            margin: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .section-chevron {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+        details.collapsible-section[open] > summary .section-chevron,
+        details.collapsible-sub[open] > summary .section-chevron {
+            transform: rotate(180deg);
+        }
+        details.collapsible-section > summary {
+            border-bottom: 2px solid #bae6fd;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        details.collapsible-sub > summary {
+            border-bottom: 1px solid #bae6fd;
+            padding-bottom: 6px;
+        }
+        details.collapsible-sub {
+            margin: 36px 0 16px 0;
+        }
+        details.collapsible-sub:first-of-type {
+            margin-top: 20px;
+        }
+        details.collapsible-sub .grid {
+            margin-top: 16px;
+        }
+
+        /* Passport-style photo placeholder */
+        .photo-placeholder {
+            width: 110px;
+            height: 145px;
+            margin: 0 auto 16px auto;
+            border: 2px dashed #cbd5e1;
+            border-radius: 6px;
+            background-color: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #94a3b8;
+            overflow: hidden;
+        }
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         footer {
             text-align: center;
             padding: 40px;
@@ -200,22 +276,34 @@
 <body>
 
     <header>
+        <div class="photo-placeholder">?</div>
         <h1>Artem Kuvaev</h1>
         <p class="subtitle">Software Developer & Tech Enthusiast</p>
     </header>
 
     <main>
-        <!-- ABOUT ME SECTION -->
+        <!-- WHAT IS IT SECTION -->
         <section>
-            <h2>About Me</h2>
+            <h2>What is it?</h2>
             <div class="about-box">
                 <p>This is my portfolio, which showcases most of my achievements since 2023. Since all my certificates are in Russian, I have provided a brief English description and a summary for each of them. Thank you for taking the time to check it out. You are very welcome!</p>
             </div>
         </section>
 
-        <!-- PROJECTS SECTION -->
+        <!-- ABOUT ME SECTION -->
         <section>
-            <h2>Projects</h2>
+            <h2>About Me</h2>
+            <div class="about-box">
+                <p></p>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <details class="collapsible-section" open>
+            <summary>
+                <h2>Projects</h2>
+                <span class="section-chevron">▾</span>
+            </summary>
             <div class="grid">
                 
                 <!-- Project 1: ANIS -->
@@ -250,13 +338,20 @@
                 </div>
 
             </div>
-        </section>
+        </details>
         <!-- ACHIEVEMENTS SECTION -->
-        <section>
-            <h2>Key Achievements & Olympiads</h2>
+        <details class="collapsible-section" open>
+            <summary>
+                <h2>Key Achievements & Olympiads</h2>
+                <span class="section-chevron">▾</span>
+            </summary>
 
-            <div class="subsection-title">NTO (National Technological Olympiad)</div>
-            <div class="grid">
+            <details class="collapsible-sub" open>
+                <summary>
+                    <div class="subsection-title">NTO (National Technological Olympiad)</div>
+                    <span class="section-chevron">▾</span>
+                </summary>
+                <div class="grid">
 
                 <!-- 1. Talant 9 Grade Participant -->
                 <div class="card">
@@ -354,20 +449,24 @@
                     </div>
                 </div>
 
-            </div>
+            </details>
 
-            <div class="subsection-title">Other Olympiads & Competitions</div>
-            <div class="grid">
+            <details class="collapsible-sub" open>
+                <summary>
+                    <div class="subsection-title">Other Olympiads & Competitions</div>
+                    <span class="section-chevron">▾</span>
+                </summary>
+                <div class="grid">
 
                 <!-- 7. Tech Conference Diploma -->
                 <div class="card">
                     <div>
                         <span class="tag achievement">Science & Tech</span>
-                        <h3>XX All-Russian Conference – Diploma</h3>
+                        <h3>XX All-Russian Youth Conference – Diploma</h3>
                         <img src="conference_diploma_2026.png" alt="Conference Diploma" class="cert-thumb">
                         <div class="transcript-box">
                             <strong>Official Transcript:</strong><br>
-                            "2nd Degree Diploma. Awarded to Artem Kuvaev for the research paper: 'Creating Algorithms for Processing Signals from Brain Areas Responsible for Movement/Speech'. Programming Section, XX Scientific Conference (2026)."
+                            "2nd Degree Diploma. Awarded to Artem Kuvaev for the research paper: 'Creating Algorithms for Processing Signals from Brain Areas Responsible for Movement/Speech'. Programming Section, XX All-Russian Scientific Conference (2026)."
                         </div>
                     </div>
                     <div class="links">
@@ -399,7 +498,7 @@
                         <img src="conference_participant_2026.png" alt="Conference Participant" class="cert-thumb">
                         <div class="transcript-box">
                             <strong>Official Transcript:</strong><br>
-                            "Participant Certificate. Verifies that Artem Kuvaev actively participated and presented a report in the Programming section at the XX All-Research Scientific Conference 'The Future of Strong Russia in High Technologies' (2026)."
+                            "Participant Certificate. Verifies that Artem Kuvaev actively participated and presented a report in the Programming section at the XX All-Russian Scientific Conference 'The Future of Strong Russia in High Technologies' (2026)."
                         </div>
                     </div>
                     <div class="links">
@@ -424,7 +523,8 @@
                 </div>
 
             </div>
-        </section>
+            </details>
+        </details>
     </main>
 
     <footer>
