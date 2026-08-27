@@ -6,13 +6,13 @@
     <title>Artem Kuvaev | Portfolio</title>
     <style>
         :root {
-            --bg-color: #f0f8ff; /* Светло-голубой фон (Alice Blue) */
-            --card-bg: #ffffff; /* Белый фон для карточек */
-            --text-color: #334155; /* Темно-серый текст для хорошего чтения */
-            --text-bright: #0f172a; /* Почти черный для заголовков */
-            --accent-color: #0284c7; /* Насыщенный голубой для акцентов */
-            --accent-green: #059669; /* Изумрудный для кнопки кода */
-            --border-color: #e2e8f0; /* Светлая аккуратная граница */
+            --bg-color: #f0f8ff; /* Нежно-голубой фон (Alice Blue) */
+            --card-bg: #ffffff; /* Белый фон карточек для контраста */
+            --text-color: #334155; /* Комфортный темно-серый текст */
+            --text-bright: #0f172a; /* Почти черный для акцента на заголовках */
+            --accent-color: #0284c7; /* Основной насыщенный голубой */
+            --accent-green: #059669; /* Изумрудный для кнопок просмотра кода */
+            --border-color: #e2e8f0; /* Легкие светлые границы */
         }
 
         body {
@@ -57,7 +57,7 @@
 
         h2 {
             color: var(--text-bright);
-            border-bottom: 2px solid #bae6fd; /* Нежно-голубая полоса под заголовком */
+            border-bottom: 2px solid #bae6fd; /* Мягкая голубая линия */
             padding-bottom: 8px;
             font-size: 1.8rem;
         }
@@ -113,13 +113,13 @@
         }
 
         .tag.private {
-            background-color: #fee2e2; /* Нежно-красный для приватного */
+            background-color: #fee2e2; /* Мягкий красный для приватного */
             color: #b91c1c;
             border-color: #fca5a5;
         }
 
         .tag.achievement {
-            background-color: #fef3c7; /* Теплый желтый для олимпиад */
+            background-color: #fef3c7; /* Песочно-желтый для олимпиад */
             color: #b45309;
             border-color: #fde68a;
         }
@@ -151,13 +151,40 @@
         }
 
         .btn.primary {
-            background-color: #0284c7; /* Голубая главная кнопка */
+            background-color: #0284c7; /* Голубая основная кнопка */
             color: #ffffff;
             border-color: #0284c7;
         }
 
         .btn.primary:hover {
             background-color: #0369a1;
+        }
+
+        /* Стили для адаптивной галереи картинок */
+        .card-img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-top: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .img-gallery-wrapper {
+            margin-top: 12px;
+        }
+
+        .img-gallery-sub {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .img-gallery-sub img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
         }
 
         footer {
@@ -200,16 +227,29 @@
                     </div>
                     <div class="links">
                         <a href="https://github.com" class="btn primary" target="_blank">View Code</a>
-                        <a href="#" class="btn" target="_blank">Presentation (PDF)</a>
+                        <a href="presentation_anis.pdf" class="btn" target="_blank">Presentation (PDF)</a>
                     </div>
                 </div>
 
-                <!-- Project 2: Ongoing Private -->
+                <!-- Project 2: Ongoing Private (Island for Mac) -->
                 <div class="card">
                     <div>
                         <span class="tag private">Private Repository</span>
-                        <h3>[Your Application Name]</h3>
-                        <p>An ongoing commercial/product application focused on optimization and scalable architecture. The code repository is private due to commercial confidentiality, but structural details can be provided upon request.</p>
+                        <h3>Island for Mac</h3>
+                        <p>A native macOS productivity utility that seamlessly integrates a "Dynamic Island" widget near the camera notch. Features include interactive media controller, background timers, customizable clipboard tools, and notification tracking without dock icons or separate windows.</p>
+                        
+                        <!-- ПРОФЕССИОНАЛЬНАЯ ГАЛЕРЕЯ ТРЕХ СКРИНШОТОВ -->
+                        <div class="img-gallery-wrapper">
+                            <!-- Скриншот 1 (Большое интро сверху) -->
+                            <img src="island_intro.png" alt="Island for Mac Intro Animation" class="card-img" style="margin-top: 0;">
+                            
+                            <div class="img-gallery-sub">
+                                <!-- Скриншот 2 (Главная страница) -->
+                                <img src="island_main.png" alt="Island for Mac Landing">
+                                <!-- Скриншот 3 (Фичи/Таймер) -->
+                                <img src="island_features.png" alt="Island for Mac UI Features">
+                            </div>
+                        </div>
                     </div>
                     <div class="links">
                         <span class="btn" style="cursor: not-allowed; opacity: 0.6; background-color: #e2e8f0;">Code Private</span>
@@ -224,48 +264,22 @@
             <h2>Key Achievements & Olympiads</h2>
             <div class="grid">
 
-                <!-- Achievement 1: Entrepreneurship -->
+                <!-- Achievement 1: Tech Conference Diploma -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">Science & Tech</span>
+                        <h3>XX All-Russian Youth Scientific Conference – Diploma</h3>
+                        <p><strong>Status:</strong> 2nd Degree Diploma Winner (2026)</p>
+                        <p>Awarded in the "Programming" section for developing and defending the research project titled "Creating Algorithms for Processing Signals from Brain Areas Responsible for Movement/Speech". Included in the official Ministry of Education list.</p>
+                    </div>
+                    <div class="links">
+                        <a href="conference_diploma_2026.pdf" class="btn" target="_blank">View Diploma (PDF)</a>
+                    </div>
+                </div>
+
+                <!-- Achievement 2: Entrepreneurship -->
                 <div class="card">
                     <div>
                         <span class="tag achievement">Business & Startups</span>
                         <h3>All-Russian Olympiad in Entrepreneurship</h3>
                         <p><strong>Status:</strong> Finalist (2026)</p>
-                        <p>Recognized at the national level for demonstrating advanced competencies in business modeling, product strategy, and project management. Backed by the Ministry of Higher Education and Skolkovo Foundation.</p>
-                    </div>
-                    <div class="links">
-                        <a href="#" class="btn" target="_blank">View Certificate (PDF)</a>
-                    </div>
-                </div>
-
-                <!-- Achievement 2: Tech Conference -->
-                <div class="card">
-                    <div>
-                        <span class="tag achievement">Science & Tech</span>
-                        <h3>XX All-Russian Scientific Conference</h3>
-                        <p><strong>Status:</strong> 2nd Degree Diploma Winner (2026)</p>
-                        <p>Awarded in the "Programming" section for the development and defense of neural signal processing algorithms. Included in the official Ministry of Education list of elite academic competitions.</p>
-                    </div>
-                    <div class="links">
-                        <a href="#" class="btn" target="_blank">View Diploma (PDF)</a>
-                    </div>
-                </div>
-
-                <!-- Achievement 3: Placeholder for Olympiad 3 -->
-                <div class="card">
-                    <div>
-                        <span class="tag achievement">Olympiad</span>
-                        <h3>[Name of Olympiad 3]</h3>
-                        <p><strong>Status:</strong> [Winner / Participant] (2024/2025)</p>
-                        <p>Brief 1-2 sentence description in English explaining what you did and why it's important.</p>
-                    </div>
-                    <div class="links">
-                        <a href="#" class="btn" target="_blank">View Certificate (PDF)</a>
-                    </div>
-                </div>
-
-                <!-- Achievement 4: Placeholder for Olympiad 4 -->
-                <div class="card">
-                    <div>
-                        <span class="tag achievement">Olympiad</span>
-                        <h3>[Name of Olympiad 4]</h3>
-                        <p><strong>Status:</strong> [Winner / Participant]</p>
