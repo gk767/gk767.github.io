@@ -188,6 +188,7 @@
             margin-top: 20px;
         }
 
+        /* Collapsible sections & subsections */
         details.collapsible-section > summary,
         details.collapsible-sub > summary {
             cursor: pointer;
@@ -241,6 +242,7 @@
             margin-top: 16px;
         }
 
+        /* Passport-style photo placeholder */
         .photo-placeholder {
             width: 110px;
             height: 145px;
@@ -256,34 +258,55 @@
             color: #94a3b8;
             overflow: hidden;
         }
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #64748b;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="photo-placeholder">AK</div>
+        <div class="photo-placeholder">?</div>
         <h1>Artem Kuvaev</h1>
         <p class="subtitle">Student Developer, Interested in Startups</p>
     </header>
 
     <main>
+        <!-- WHAT IS IT SECTION -->
         <section>
             <h2>What is it?</h2>
             <div class="about-box">
-                <p>This is my portfolio, which showcases my achievements, including my early academic foundation and milestones reached since 2023. Since most of my certificates are in Russian, I have provided a brief English description and an official transcript summary for each of them. Thank you for taking the time to check it out. You are very welcome!</p>
+                <p>This is my portfolio, which showcases most of my achievements since 2023. Since all my certificates are in Russian, I have provided a brief English description and a summary for each of them. Thank you for taking the time to check it out. You are very welcome!</p>
             </div>
         </section>
 
+        <!-- ABOUT ME SECTION -->
         <section>
             <h2>About Me</h2>
             <div class="about-box">
                 <p>I'm Artem, born in April 2009. I've been into math since the 1st grade and physics since the 7th. For me, success means creating something useful for humanity and leaving a lasting legacy. I speak Russian and English, and I'm always open to making new connections.</p>
             </div>
         </section>
-        <section>
-            <h2>Projects</h2>
+
+        <!-- PROJECTS SECTION -->
+        <details class="collapsible-section" open>
+            <summary>
+                <h2>Projects</h2>
+                <span class="section-chevron">▾</span>
+            </summary>
             <div class="grid">
-                <!-- Проект ANIS -->
+                
+                <!-- Project 1: ANIS -->
                 <div class="card">
                     <div>
                         <span class="tag">Public Repository</span>
@@ -291,279 +314,281 @@
                         <p>A personal research project exploring brain-computer interface signal processing for movement/speech-related brain activity. Implements and benchmarks standard, published BCI methods — motor-imagery decoding via CSP+LDA and adaptive tremor suppression via RLS filtering — evaluated with proper cross-validation on public EEG datasets (PhysioNet). Built to learn real techniques used in BCI research, alongside a larger set of experimental prototypes exploring assistive concepts for ALS/Parkinson's (not clinically validated).</p>
                     </div>
                     <div class="links">
-                        <a href="#" class="btn primary">View Code</a>
-                        <a href="#" class="btn">Presentation (PPTX)</a>
+                        <a href="https://github.com/gk767/anis-adaptive-neural-interface" class="btn primary" target="_blank">View Code</a>
+                        <a href="presentation_anis.pptx" class="btn" target="_blank">Presentation (PPTX)</a>
                     </div>
                 </div>
 
-                <!-- Проект Island for Mac -->
+                <!-- Project 2: Island for Mac -->
                 <div class="card">
                     <div>
-                        <span class="tag private">Code Private</span>
+                        <span class="tag private">Private Repository</span>
                         <h3>Island for Mac</h3>
                         <p>A native macOS productivity utility that seamlessly integrates a "Dynamic Island" widget near the camera notch. Features include interactive media controller, background timers, customizable clipboard tools, and notification tracking without dock icons or separate windows.</p>
-                        <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;"><em>Note: The screenshots below display the official product download website (Landing Page).</em></p>
+                        <p style="font-style: italic; font-size: 0.85rem; margin-top: 10px; color: #64748b;">Note: The screenshots below display the official product download website (Landing Page).</p>
+                        
                         <div class="img-gallery-sub">
-                            <img src="island-landing.png" alt="Island for Mac Landing">
-                            <img src="island-ui.png" alt="Island for Mac UI Features">
+                            <img src="island_main.png" alt="Island for Mac Landing">
+                            <img src="island_features.png" alt="Island for Mac UI Features">
                         </div>
                     </div>
                     <div class="links">
-                        <span class="btn" style="cursor: not-allowed; opacity: 0.6;">Private Repository</span>
+                        <span class="btn" style="cursor: not-allowed; opacity: 0.6; background-color: #e2e8f0;">Code Private</span>
                     </div>
                 </div>
+
             </div>
-        </section>
-        <section>
-            <details class="collapsible-section" open>
+        </details>
+        <!-- ACHIEVEMENTS SECTION -->
+        <details class="collapsible-section" open>
+            <summary>
+                <h2>Key Achievements & Olympiads</h2>
+                <span class="section-chevron">▾</span>
+            </summary>
+
+            <details class="collapsible-sub" open>
                 <summary>
-                    <h2>Key Achievements & Olympiads</h2>
-                    <span class="section-chevron">▼</span>
+                    <div class="subsection-title">NTO (National Technological Olympiad)</div>
+                    <span class="section-chevron">▾</span>
                 </summary>
+                <div class="grid">
 
-                <!-- НТО БЛОК -->
-                <details class="collapsible-sub" open>
-                    <summary>
-                        <span class="subsection-title">NTO (National Technological Olympiad)</span>
-                        <span class="section-chevron">▼</span>
-                    </summary>
-
-                    <!-- НТО 9 класс -->
-                    <h4 style="margin: 20px 0 10px 0; color: var(--text-bright);">NTO 9th Grade</h4>
-                    <div class="grid">
-                        <div class="card">
-                            <div>
-                                <span class="tag achievement">Olympiad Participant</span>
-                                <h3>"Talant NTO" Competition – Participant</h3>
-                                <img class="cert-thumb" src="talant-nto-9-participant.png" alt="Talant NTO 9th Grade Participant">
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Participant Diploma. Awarded to Artem Kuvaev, 9th grade student of Lyceum №533, Krasnogvardeisky district, St. Petersburg. Competency: Engineering. Signed by A.I. Fedoseev, President of the Association of Technological Circles (April 30, 2025)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="talant-nto-9-participant.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div>
-                                <span class="tag achievement">Olympiad Prize Winner</span>
-                                <h3>"Talant NTO" Competition – Prize Winner</h3>
-                                <img class="cert-thumb" src="talant-nto-9-winner.png" alt="Talant NTO 9th Grade Prize Winner">
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Prize Winner Diploma. Awarded to Artem Kuvaev, Lyceum №533, St. Petersburg. Digital Portfolio Competition 'Talant NTO'. Competency: Natural Sciences & Research Activity. April 30, 2025."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="talant-nto-9-winner.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
+                <!-- 1. Talant 9 Grade Participant -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">NTO 9th Grade</span>
+                        <h3>"Talant NTO" Competition – Participant</h3>
+                        <img src="nto_talant_part_9.png" alt="Talant NTO 9th Grade Participant" class="cert-thumb">
+                        <div class="transcript-box">
+                            <strong>Official Transcript:</strong><br>
+                            "Participant Diploma. Awarded to Artem Kuvaev, 9th grade student of Lyceum №533, Krasnogvardeisky district, St. Petersburg. Competency: Engineering. Signed by A.I. Fedoseev, President of the Association of Technological Circles (April 30, 2025)."
                         </div>
                     </div>
+                    <div class="links">
+                        <a href="nto_talant_part_9.pdf" class="btn" target="_blank">View PDF</a>
+                    </div>
+                </div>
 
-                    <!-- Финалы НТО -->
-                    <h4 style="margin: 30px 0 10px 0; color: var(--text-bright);">NTO Finals</h4>
-                    <div class="grid">
-                        <div class="card">
-                            <div>
-                                <span class="tag achievement">Olympiad Finalist</span>
-                                <h3>National Technological Olympiad – Finalist</h3>
-                                <img class="cert-thumb" src="nto-finalist.png" alt="NTO Finalist Nanosystems">
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Finalist Diploma. Awarded to Artem Kuvaev, 9th grade, Lyceum №533, St. Petersburg. Profile: Nanosystems and Nanoengineering. Level 2 National Engineering Olympiad. Signed by E.A. Tolmacheva, Director of NTO Center (2024/2025)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="nto-finalist.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div>
-                                <span class="tag achievement">Olympiad Final Stage</span>
-                                <h3>National Technological Olympiad – Final Stage</h3>
-                                <img class="cert-thumb" src="nto-final-stage.png" alt="NTO Final Stage Participant">
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Final Stage Participant Diploma. Awarded to Artem Kuvaev, Lyceum №533, St. Petersburg. National Technological Olympiad, profile: Nanosystems and Nanoengineering. Hosted by RTU MIREA (2025)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="nto-final-stage.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
+                <!-- 2. Talant 9 Grade Prizer -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">NTO 9th Grade</span>
+                        <h3>"Talant NTO" Competition – Prize Winner</h3>
+                        <img src="nto_talant_prizer_9.png" alt="Talant NTO 9th Grade Prize Winner" class="cert-thumb">
+                        <div class="transcript-box">
+                            <strong>Official Transcript:</strong><br>
+                            "Prize Winner Diploma. Awarded to Artem Kuvaev, Lyceum №533, St. Petersburg. Digital Portfolio Competition 'Talant NTO'. Competency: Natural Sciences & Research Activity. April 30, 2025."
                         </div>
                     </div>
+                    <div class="links">
+                        <a href="nto_talant_prizer_9.pdf" class="btn" target="_blank">View PDF</a>
+                    </div>
+                </div>
 
-                    <!-- НТО 10 класс -->
-                    <h4 style="margin: 30px 0 10px 0; color: var(--text-bright);">NTO 10th Grade</h4>
-                    <div class="grid">
-                        <div class="card">
-                            <div>
-                                <span class="tag achievement">Olympiad Participant</span>
-                                <h3>"Talant NTO" Competition – Participant</h3>
-                                <img class="cert-thumb" src="talant-nto-10-participant.png" alt="Talant NTO 10th Grade Participant">
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Participant Diploma. Awarded to Artem Kuvaev, 10th grade student of Lyceum №533, Krasnogvardeisky district, St. Petersburg. Competency: Engineering. May 7, 2026."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="talant-nto-10-participant.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div>
-                                <span class="tag achievement">Olympiad Prize Winner</span>
-                                <h3>"Talant NTO" Competition – Prize Winner</h3>
-                                <img class="cert-thumb" src="talant-nto-10-winner.png" alt="Talant NTO 10th Grade Prize Winner">
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Prize Winner Diploma. Awarded to Artem Kuvaev, 10th grade, Lyceum №533, St. Petersburg. Competency: Natural Sciences & Research Activity. Signed by A.I. Fedoseev (May 7, 2026)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="talant-nto-10-winner.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
+                <!-- 3. NTO Finalist Nanosystems -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">NTO Finals</span>
+                        <h3>National Technological Olympiad – Finalist</h3>
+                        <img src="nto_finalist_nano.png" alt="NTO Finalist Nanosystems" class="cert-thumb">
+                        <div class="transcript-box">
+                            <strong>Official Transcript:</strong><br>
+                            "Finalist Diploma. Awarded to Artem Kuvaev, 9th grade, Lyceum №533, St. Petersburg. Profile: Nanosystems and Nanoengineering. Level 2 National Engineering Olympiad. Signed by E.A. Tolmacheva, Director of NTO Center (2024/2025)."
                         </div>
                     </div>
-                </details>
-                <!-- Другие олимпиады -->
-                <details class="collapsible-sub">
-                    <summary>
-                        <span class="subsection-title">Other Olympiads & Competitions</span>
-                        <span class="section-chevron">▼</span>
-                    </summary>
-                    <div class="grid">
-                        <div class="card">
-                            <div>
-                                <span class="tag">Science & Tech</span>
-                                <h3>XX All-Russian Youth Conference – Diploma</h3>
-                                <img class="cert-thumb" src="conference-diploma.png" alt="Conference Diploma">
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "2nd Degree Diploma. Awarded to Artem Kuvaev for the research paper: 'Creating Algorithms for Processing Signals from Brain Areas Responsible for Movement/Speech'. Programming Section, XX All-Russian Scientific Conference (2026)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="conference-diploma.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div>
-                                <span class="tag">Business & Startups</span>
-                                <h3>All-Russian Olympiad in Entrepreneurship</h3>
-                                <img class="cert-thumb" src="entrepreneurship-finalist.png" alt="Entrepreneurship Olympiad">
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Finalist Certificate. Awarded to Artem Kuvaev for successfully reaching the National Finals of the All-Russian Olympiad in Entrepreneurship. Backed by the Ministry of Education, Skolkovo Foundation, and Sber (2026)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="entrepreneurship-finalist.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div>
-                                <span class="tag">Science & Tech</span>
-                                <h3>XX All-Russian Youth Conference – Participant</h3>
-                                <img class="cert-thumb" src="conference-participant.png" alt="Conference Participant">
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Participant Certificate. Verifies that Artem Kuvaev actively participated and presented a report in the Programming section at the XX All-Russian Scientific Conference 'The Future of Strong Russia in High Technologies' (2026)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="conference-participant.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div>
-                                <span class="tag">Engineering</span>
-                                <h3>"Technostorm" Digital Projects Competition</h3>
-                                <img class="cert-thumb" src="technostorm-participant.png" alt="Technostorm Competition">
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Participation Certificate. Confirms that Artem Kuvaev participated in the 'Technostorm' Digital and Tech Projects Competition within the 'Digital Project' nomination track. Organized by St. Petersburg Tech Academy (2026)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="technostorm-participant.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
+                    <div class="links">
+                        <a href="nto_finalist_nano.pdf" class="btn" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+                <!-- 4. NTO Final Stage Participant -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">NTO Finals</span>
+                        <h3>National Technological Olympiad – Final Stage</h3>
+                        <img src="nto_final_part_nano.png" alt="NTO Final Stage Participant" class="cert-thumb">
+                        <div class="transcript-box">
+                            <strong>Official Transcript:</strong><br>
+                            "Final Stage Participant Diploma. Awarded to Artem Kuvaev, Lyceum №533, St. Petersburg. National Technological Olympiad, profile: Nanosystems and Nanoengineering. Hosted by RTU MIREA (2025)."
                         </div>
                     </div>
-                </details>
-                <!-- ОТДЕЛЬНЫЙ ОТДЕЛ ПОД ТРИ КЛАССА ВНИЗУ ДОСТИЖЕНИЙ -->
-                <details class="collapsible-sub">
-                    <summary>
-                        <span class="subsection-title">Early Academic Foundation</span>
-                        <span class="section-chevron">▼</span>
-                    </summary>
-                    
-                    <div class="about-box" style="margin-bottom: 20px;">
-                        <p>There are also few achievements from my <strong>elementary and middle school years</strong> that I managed to find. They are just a fraction of what I accomplished back then, but they represent the foundation of my journey.</p>
+                    <div class="links">
+                        <a href="nto_final_part_nano.pdf" class="btn" target="_blank">View PDF</a>
                     </div>
+                </div>
 
-                    <div class="grid">
-                        <!-- 4 класс: Инфознайка -->
-                        <div class="card">
-                            <div>
-                                <span class="tag achievement">4th Grade</span>
-                                <h3>International Infoznaika Competition – Winner</h3>
-                                <img class="cert-thumb" src="achievement-4th-grade-infoznaika.png" alt="Infoznaika 2020 Certificate">
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Winner Diploma. Awarded to Artem Kuvaev, 4th grade student of Secondary School №2, Vsevolozhk. Municipal Winner of the International Competition 'Infoznaika-2020'. Level: Preparatory. (2020)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="achievement-4th-grade-infoznaika.png" target="_blank" class="btn primary">View PNG</a>
-                                <a href="achievement-4th-grade-infoznaika.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
-                        </div>
-
-                        <!-- 4 класс: Кванториум -->
-                        <div class="card">
-                            <div>
-                                <span class="tag achievement">4th Grade</span>
-                                <h3>"Techno-Art" Art Objects Competition – Winner</h3>
-                                <img class="cert-thumb" src="achievement-4th-grade-quantorium.png" alt="Techno-Art 2020 Certificate">
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Winner Certificate. Awarded to the project 'Enchanted Forest' for winning the 'Techno-Techno' nomination track at the 'Techno-Art' Competition. Children's Technopark 'Quantorium', Vsevolozhk (2020)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="achievement-4th-grade-quantorium.png" target="_blank" class="btn primary">View PNG</a>
-                                <a href="achievement-4th-grade-quantorium.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
-                        </div>
-
-                        <!-- 5 класс (Плейсхолдер) -->
-                        <div class="card">
-                            <div>
-                                <span class="tag achievement" style="background-color: #f1f5f9; color: #64748b; border-color: #cbd5e1;">5th Grade</span>
-                                <h3>Middle School Transition</h3>
-                                <p style="color: #94a3b8; font-style: italic;">Documents from the 5th grade are currently being archived or located.</p>
-                            </div>
-                            <div class="links">
-                                <button class="btn" style="cursor: not-allowed; opacity: 0.5;" disabled>N/A</button>
-                            </div>
-                        </div>
-
-                        <!-- 6 класс: ВсОШ -->
-                        <div class="card">
-                            <div>
-                                <span class="tag achievement">6th Grade</span>
-                                <h3>All-Russian Olympiad for Schoolchildren – Prize Winner</h3>
-                                <img class="cert-thumb" src="achievement-6th-grade-vsoch.png" alt="All-Russian Olympiad 6th Grade Mathematics">
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Prize Winner Certificate. Awarded to Artem Vitalievich Kuvaev, 6th grade student of Secondary School №2, Vsevolozhk. Municipal stage in Mathematics. (December 9, 2021)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="achievement-6th-grade-vsoch.png" target="_blank" class="btn primary">View PNG</a>
-                                <a href="achievement-6th-grade-vsoch.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
+                <!-- 5. Talant 10 Grade Participant -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">NTO 10th Grade</span>
+                        <h3>"Talant NTO" Competition – Participant</h3>
+                        <img src="nto_talant_part_10.png" alt="Talant NTO 10th Grade Participant" class="cert-thumb">
+                        <div class="transcript-box">
+                            <strong>Official Transcript:</strong><br>
+                            "Participant Diploma. Awarded to Artem Kuvaev, 10th grade student of Lyceum №533, Krasnogvardeisky district, St. Petersburg. Competency: Engineering. May 7, 2026."
                         </div>
                     </div>
-                </details>
+                    <div class="links">
+                        <a href="nto_talant_part_10.pdf" class="btn" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+                <!-- 6. Talant 10 Grade Prizer -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">NTO 10th Grade</span>
+                        <h3>"Talant NTO" Competition – Prize Winner</h3>
+                        <img src="nto_talant_prizer_10.png" alt="Talant NTO 10th Grade Prize Winner" class="cert-thumb">
+                        <div class="transcript-box">
+                            <strong>Official Transcript:</strong><br>
+                            "Prize Winner Diploma. Awarded to Artem Kuvaev, 10th grade, Lyceum №533, St. Petersburg. Competency: Natural Sciences & Research Activity. Signed by A.I. Fedoseev (May 7, 2026)."
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="nto_talant_prizer_10.pdf" class="btn" target="_blank">View PDF</a>
+                    </div>
+                </div>
 
             </details>
-        </section>
+
+            <details class="collapsible-sub" open>
+                <summary>
+                    <div class="subsection-title">Other Olympiads & Competitions</div>
+                    <span class="section-chevron">▾</span>
+                </summary>
+                <div class="grid">
+
+                <!-- 7. Tech Conference Diploma -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">Science & Tech</span>
+                        <h3>XX All-Russian Youth Conference – Diploma</h3>
+                        <img src="conference_diploma_2026.png" alt="Conference Diploma" class="cert-thumb">
+                        <div class="transcript-box">
+                            <strong>Official Transcript:</strong><br>
+                            "2nd Degree Diploma. Awarded to Artem Kuvaev for the research paper: 'Creating Algorithms for Processing Signals from Brain Areas Responsible for Movement/Speech'. Programming Section, XX All-Russian Scientific Conference (2026)."
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="conference_diploma_2026.pdf" class="btn" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+                <!-- 8. Entrepreneurship -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">Business & Startups</span>
+                        <h3>All-Russian Olympiad in Entrepreneurship</h3>
+                        <img src="olympiad_biz.png" alt="Entrepreneurship Olympiad" class="cert-thumb">
+                        <div class="transcript-box">
+                            <strong>Official Transcript:</strong><br>
+                            "Finalist Certificate. Awarded to Artem Kuvaev for successfully reaching the National Finals of the All-Russian Olympiad in Entrepreneurship. Backed by the Ministry of Education, Skolkovo Foundation, and Sber (2026)."
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="olympiad_biz.pdf" class="btn" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+                <!-- 9. Tech Conference Participant -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">Science & Tech</span>
+                        <h3>XX All-Russian Youth Conference – Participant</h3>
+                        <img src="conference_participant_2026.png" alt="Conference Participant" class="cert-thumb">
+                        <div class="transcript-box">
+                            <strong>Official Transcript:</strong><br>
+                            "Participant Certificate. Verifies that Artem Kuvaev actively participated and presented a report in the Programming section at the XX All-Russian Scientific Conference 'The Future of Strong Russia in High Technologies' (2026)."
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="conference_participant_2026.pdf" class="btn" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+                <!-- 10. Technostorm -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">Engineering</span>
+                        <h3>"Technostorm" Digital Projects Competition</h3>
+                        <img src="technostorm_participant_2026.png" alt="Technostorm Competition" class="cert-thumb">
+                        <div class="transcript-box">
+                            <strong>Official Transcript:</strong><br>
+                            "Participation Certificate. Confirms that Artem Kuvaev participated in the 'Technostorm' Digital and Tech Projects Competition within the 'Digital Project' nomination track. Organized by St. Petersburg Tech Academy (2026)."
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="technostorm_participant_2026.pdf" class="btn" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+            </div>
+            </details>
+
+            <details class="collapsible-sub" open>
+                <summary>
+                    <div class="subsection-title">Early School Achievements (Grades 4–6)</div>
+                    <span class="section-chevron">▾</span>
+                </summary>
+                <p style="font-style: italic; font-size: 0.85rem; margin: 4px 0 16px; color: #64748b;">There are also a few achievements from my early school years (grades 4–6) that I found — this isn't a complete record, just what I've managed to locate so far.</p>
+                <div class="grid">
+
+                <!-- 11. Infoznaika -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">Computer Science</span>
+                        <h3>"Infoznaika-2020" International IT Competition – Winner</h3>
+                        <img src="achievement-4th-grade-infoznaika.png" alt="Infoznaika 2020 Diploma" class="cert-thumb">
+                        <div class="transcript-box">
+                            <strong>Official Transcript:</strong><br>
+                            "Municipal-level Diploma of the Winner of the International Competition in Computer Science and IT 'Infoznaika-2020'. Awarded to Artem Kuvaev, preparatory level, Grade 4."
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="achievement-4th-grade-infoznaika.pdf" class="btn" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+                <!-- 12. Techno-Art -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">Engineering & Art</span>
+                        <h3>"Techno-Art" Art-Objects Contest – Winner</h3>
+                        <img src="achievement-4th-grade-quantorium.png" alt="Techno-Art 2020 Diploma" class="cert-thumb">
+                        <div class="transcript-box">
+                            <strong>Official Transcript:</strong><br>
+                            "Awarded for winning the 'Techno-Techno' nomination with the project 'Enchanted Forest', at the 2020 Techno-Art Art-Objects Contest. Kvantorium Children's Technopark, Vsevolozhsk."
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="achievement-4th-grade-quantorium.pdf" class="btn" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+                <!-- 13. VSOSh Math -->
+                <div class="card">
+                    <div>
+                        <span class="tag achievement">Mathematics</span>
+                        <h3>All-Russian School Olympiad (VSOSh) – Prize Winner</h3>
+                        <img src="achievement-6th-grade-vsoch.png" alt="VSOSh Math Municipal Stage Certificate" class="cert-thumb">
+                        <div class="transcript-box">
+                            <strong>Official Transcript:</strong><br>
+                            "Certificate of a Prize Winner of the Municipal Stage of the All-Russian School Olympiad in Mathematics. Awarded to Artem Kuvaev, Grade 6 (2021)."
+                        </div>
+                    </div>
+                    <div class="links">
+                        <a href="achievement-6th-grade-vsoch.pdf" class="btn" target="_blank">View PDF</a>
+                    </div>
+                </div>
+
+                </div>
+            </details>
+        </details>
     </main>
 
-    <footer style="max-width: 900px; margin: 40px auto; padding: 20px; text-align: center; font-size: 0.85rem; color: #64748b; border-top: 1px solid var(--border-color);">
+    <footer>
         <p>&copy; 2026 Artem Kuvaev. Powered by GitHub Pages.</p>
     </footer>
 
 </body>
 </html>
-
