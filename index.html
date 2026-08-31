@@ -1,124 +1,263 @@
-                <!-- Другие олимпиады -->
-                <details class="collapsible-sub">
-                    <summary>
-                        <span class="subsection-title">Other Olympiads & Competitions</span>
-                        <span class="section-chevron">▼</span>
-                    </summary>
-                    <div class="grid">
-                        <div class="card">
-                            <div>
-                                <span class="tag">Science & Tech</span>
-                                <h3>XX All-Russian Youth Conference – Diploma</h3>
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "2nd Degree Diploma. Awarded to Artem Kuvaev for the research paper: 'Creating Algorithms for Processing Signals from Brain Areas Responsible for Movement/Speech'. Programming Section, XX All-Russian Scientific Conference (2026)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="conference-diploma.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div>
-                                <span class="tag">Business & Startups</span>
-                                <h3>All-Russian Olympiad in Entrepreneurship</h3>
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Finalist Certificate. Awarded to Artem Kuvaev for successfully reaching the National Finals of the All-Russian Olympiad in Entrepreneurship. Backed by the Ministry of Education, Skolkovo Foundation, and Sber (2026)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="entrepreneurship-finalist.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div>
-                                <span class="tag">Science & Tech</span>
-                                <h3>XX All-Russian Youth Conference – Participant</h3>
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Participant Certificate. Verifies that Artem Kuvaev actively participated and presented a report in the Programming section at the XX All-Russian Scientific Conference 'The Future of Strong Russia in High Technologies' (2026)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="conference-participant.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div>
-                                <span class="tag">Engineering</span>
-                                <h3>"Technostorm" Digital Projects Competition</h3>
-                                <div class="transcript-box">
-                                    <strong>Official Transcript:</strong> "Participation Certificate. Confirms that Artem Kuvaev participated in the 'Technostorm' Digital and Tech Projects Competition within the 'Digital Project' nomination track. Organized by St. Petersburg Tech Academy (2026)."
-                                </div>
-                            </div>
-                            <div class="links">
-                                <a href="technostorm-participant.pdf" target="_blank" class="btn">View PDF</a>
-                            </div>
-                        </div>
-                    </div>
-                </details>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artem Kuvaev | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #f0f8ff;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+            --text-bright: #0f172a;
+            --accent-color: #0284c7;
+            --accent-green: #059669;
+            --border-color: #e2e8f0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            max-width: 900px;
+            margin: 40px auto 20px auto;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        h1 {
+            color: var(--text-bright);
+            margin-bottom: 5px;
+            font-size: 2.5rem;
+        }
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+            font-weight: 600;
+        }
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: var(--text-bright);
+            border-bottom: 2px solid #bae6fd;
+            padding-bottom: 8px;
+            font-size: 1.8rem;
+        }
+        .about-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            align-items: stretch;
+        }
+        @media (min-width: 768px) {
+            .grid { grid-template-columns: 1fr 1fr; }
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            height: auto;
+        }
+        .card h3 {
+            color: var(--text-bright);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+            line-height: 1.4;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0f2fe;
+            border: 1px solid #bae6fd;
+            color: #0369a1;
+            padding: 2px 10px;
+            font-size: 0.8rem;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            width: fit-content;
+        }
+        .tag.private {
+            background-color: #fee2e2;
+            color: #b91c1c;
+            border-color: #fca5a5;
+        }
+        .tag.achievement {
+            background-color: #fef3c7;
+            color: #b45309;
+            border-color: #fde68a;
+        }
+        .links {
+            margin-top: auto;
+            padding-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #f8fafc;
+            color: #475569;
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: 0.2s;
+            font-weight: 500;
+        }
+        .btn:hover {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+            color: var(--text-bright);
+        }
+        .btn.primary {
+            background-color: #0284c7;
+            color: #ffffff;
+            border-color: #0284c7;
+        }
+        .btn.primary:hover { background-color: #0369a1; }
+        
+        .cert-thumb {
+            width: 100%;
+            height: auto;
+            max-height: 320px;
+            object-fit: contain;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 10px;
+            background-color: #f8fafc;
+            display: block;
+        }
+        .transcript-box {
+            background-color: #f8fafc;
+            border-left: 3px solid #0284c7;
+            padding: 8px 12px;
+            margin: 10px 0;
+            font-size: 0.8rem;
+            color: #475569;
+            border-radius: 0 4px 4px 0;
+        }
+        .img-gallery-sub {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .img-gallery-sub img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+        .subsection-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin: 36px 0 16px 0;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #bae6fd;
+        }
+        .subsection-title:first-of-type {
+            margin-top: 20px;
+        }
 
-                <!-- НОВЫЙ БЛОК: Достижения 4, 5, 6 классов (С ИСПРАВЛЕННЫМ ТЕКСТОМ) -->
-                <details class="collapsible-sub">
-                    <summary>
-                        <span class="subsection-title">Early Academic Foundation</span>
-                        <span class="section-chevron">▼</span>
-                    </summary>
-                    
-                    <div class="about-box" style="margin-bottom: 20px;">
-                        <p>There are also few achievements from my <strong>elementary and middle school years</strong> that I managed to find. They are just a fraction of what I accomplished back then, but they represent the foundation of my journey.</p>
-                    </div>
+        details.collapsible-section > summary,
+        details.collapsible-sub > summary {
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        details.collapsible-section > summary::-webkit-details-marker,
+        details.collapsible-sub > summary::-webkit-details-marker {
+            display: none;
+        }
+        details.collapsible-section > summary::marker,
+        details.collapsible-sub > summary::marker {
+            content: "";
+        }
+        details.collapsible-section > summary h2,
+        details.collapsible-sub > summary .subsection-title {
+            margin: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .section-chevron {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+        details.collapsible-section[open] > summary .section-chevron,
+        details.collapsible-sub[open] > summary .section-chevron {
+            transform: rotate(180deg);
+        }
+        details.collapsible-section > summary {
+            border-bottom: 2px solid #bae6fd;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        details.collapsible-sub > summary {
+            border-bottom: 1px solid #bae6fd;
+            padding-bottom: 6px;
+        }
+        details.collapsible-sub {
+            margin: 36px 0 16px 0;
+        }
+        details.collapsible-sub:first-of-type {
+            margin-top: 20px;
+        }
+        details.collapsible-sub .grid {
+            margin-top: 16px;
+        }
 
-                    <div class="grid">
-                        <!-- 4 класс -->
-                        <div class="card">
-                            <div>
-                                <span class="tag achievement">4th Grade</span>
-                                <h3>Elementary School Excellence</h3>
-                                <p>Academic honors and initial project work completed during the fourth grade.</p>
-                            </div>
-                            <div class="links">
-                                <a href="achievement-4th-grade.png" target="_blank" class="btn primary">View PNG</a>
-                                <a href="achievement-4th-grade.pdf" target="_blank" class="btn">Download PDF</a>
-                            </div>
-                        </div>
-
-                        <!-- 5 класс -->
-                        <div class="card">
-                            <div>
-                                <span class="tag achievement">5th Grade</span>
-                                <h3>Middle School Transition Achievements</h3>
-                                <p>Key subject certificates and school accomplishments during the fifth grade.</p>
-                            </div>
-                            <div class="links">
-                                <a href="achievement-5th-grade.png" target="_blank" class="btn primary">View PNG</a>
-                                <a href="achievement-5th-grade.pdf" target="_blank" class="btn">Download PDF</a>
-                            </div>
-                        </div>
-
-                        <!-- 6 класс -->
-                        <div class="card">
-                            <div>
-                                <span class="tag achievement">6th Grade</span>
-                                <h3>Advanced Middle School Competitions</h3>
-                                <p>Olympiads, local contests, and academic success in the sixth grade.</p>
-                            </div>
-                            <div class="links">
-                                <a href="achievement-6th-grade.png" target="_blank" class="btn primary">View PNG</a>
-                                <a href="achievement-6th-grade.pdf" target="_blank" class="btn">Download PDF</a>
-                            </div>
-                        </div>
-                    </div>
-                </details>
-
-            </details>
-        </section>
-    </main>
-
-    <footer style="max-width: 900px; margin: 40px auto; padding: 20px; text-align: center; font-size: 0.85rem; color: #64748b; border-top: 1px solid var(--border-color);">
-        <p>&copy; 2026 Artem Kuvaev. Powered by GitHub Pages.</p>
-    </footer>
-
-</body>
-</html>
+        .photo-placeholder {
+            width: 110px;
+            height: 145px;
+            margin: 0 auto 16px auto;
+            border: 2px dashed #cbd5e1;
+            border-radius: 6px;
+            background-color: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #94a3b8;
+            overflow: hidden;
+        }
+    </style>
+</head>
 <body>
 
     <header>
@@ -341,7 +480,7 @@
                     </div>
                 </details>
 
-                <!-- НОВЫЙ БЛОК: Достижения 4, 5, 6 классов с транскрипциями из присланных фото -->
+                <!-- НОВЫЙ БЛОК: Достижения ранних школьных лет (4, 5, 6 классы) -->
                 <details class="collapsible-sub">
                     <summary>
                         <span class="subsection-title">Early Academic Foundation</span>
@@ -383,7 +522,7 @@
                             </div>
                         </div>
 
-                        <!-- 5 класс (Плейсхолдер) -->
+                        <!-- 5 класс (Временный плейсхолдер) -->
                         <div class="card">
                             <div>
                                 <span class="tag achievement" style="background-color: #f1f5f9; color: #64748b; border-color: #cbd5e1;">5th Grade</span>
@@ -422,4 +561,3 @@
 
 </body>
 </html>
- 
